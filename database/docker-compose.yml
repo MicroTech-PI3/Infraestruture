@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  mariadb:
+    image: lexabernal/micro-database:latest
+    environment:
+      - MARIADB_ROOT_PASSWORD=my-password
+      - MARIADB_DATABASE=my-database
+      - MARIADB_USER=my-user
+      - MARIADB_PASSWORD=my-user-password
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
+volumes:
+  mariadb-data:
